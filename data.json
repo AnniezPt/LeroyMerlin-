@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "fecha": "2023-10-25",
+        "categoria": "Retail",
+        "titulo": "Leroy Merlin lanza nueva línea sostenible 'Home Index'",
+        "resumen": "La compañía refuerza su compromiso ESG clasificando más del 40% de sus productos bajo criterios de sostenibilidad verificada, impactando directamente en la percepción del consumidor DIY.",
+        "enlace_fuente": "https://www.leroymerlin.es"
+    },
+    {
+        "id": 2,
+        "fecha": "2023-10-28",
+        "categoria": "IA",
+        "titulo": "Implementación de GenAI para asesoramiento personalizado",
+        "resumen": "Nuevo piloto para usar modelos de lenguaje grandes (LLM) que ayudan a los clientes a planificar reformas complejas sugiriendo listas de materiales basadas en fotos del espacio.",
+        "enlace_fuente": "https://www.leroymerlin.es"
+    },
+    {
+        "id": 3,
+        "fecha": "2023-10-27",
+        "categoria": "Competencia",
+        "titulo": "Movimientos estratégicos en el sector bricolaje europeo",
+        "resumen": "Análisis trimestral muestra un crecimiento del 5% en ventas online de competidores directos mediante estrategias de 'Click & Collect' agresivas.",
+        "enlace_fuente": "https://www.google.com"
+    }
+]
