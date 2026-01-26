@@ -20,22 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
             data.forEach(noticia => {
                 const fechaNoticia = new Date(noticia.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
                 
-                // --- LÓGICA DE AUDIO MEJORADA ---
+                // --- DISEÑO AUDIO "TIPO SPOTIFY" ---
                 let audioPlayer = '';
                 if (noticia.audio) {
                     audioPlayer = `
-                        <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #eee;">
-                            <p style="font-size: 0.85rem; color: #78be20; margin-bottom: 8px; font-weight: 600;">
-                                🎙️ Escuchar análisis:
-                            </p>
-                            <audio controls style="width: 100%; height: 32px; border-radius: 20px;">
-                                <source src="${noticia.audio}">
+                        <div style="margin-top: 15px; padding: 12px; background-color: #f4f6f8; border-radius: 12px; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <span style="font-size: 1.2rem;">🎙️</span>
+                                <span style="font-size: 0.9rem; font-weight: 600; color: #2c3e50;">Escuchar análisis</span>
+                            </div>
+                            <audio controls style="width: 100%; height: 36px; border-radius: 8px;">
+                                <source src="${noticia.audio}" type="audio/mp4">
                                 Tu navegador no soporta el audio.
                             </audio>
                         </div>
                     `;
                 }
-                // -----------------------------
+                // -----------------------------------
 
                 const card = document.createElement('article');
                 card.className = 'news-card';
