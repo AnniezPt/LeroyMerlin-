@@ -1,81 +1,59 @@
-// Configuración
-const DATA_URL = './data.json';
-
-// Función para formatear fechas amigablemente (ej: "25 de octubre de 2023")
-const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('es-ES', options);
-};
-
-// Función asíncrona principal para cargar noticias
-async function loadNews() {
-    const container = document.getElementById('news-container');
-
-    try {
-        // Petición real al archivo JSON
-        const response = await fetch(DATA_URL);
-
-        // Verificación de estado HTTP
-        if (!response.ok) {
-            throw new Error(`Error HTTP: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        // Limpiar el indicador de carga
-        container.innerHTML = '';
-
-        // Ordenar noticias: De más reciente a más antigua
-        // Asume formato ISO "YYYY-MM-DD"
-        data.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
-
-        // Generar DOM para cada noticia
-        data.forEach(news => {
-            const article = document.createElement('article');
-            article.className = 'news-card';
-
-            // Inyección segura de contenido
-            article.innerHTML = `
-                <div class="card-body">
-                    <div class="card-meta">
-                        <span class="badge ${news.categoria}">${news.categoria}</span>
-                        <span class="date">${formatDate(news.fecha)}</span>
-                    </div>
-                    <h3 class="card-title">${news.titulo}</h3>
-                    <p class="card-excerpt">${news.resumen}</p>
-                </div>
-                <div class="card-footer">
-                    <a href="${news.enlace_fuente}" class="btn-read" target="_blank" rel="noopener noreferrer">
-                        Leer informe completo &rarr;
-                    </a>
-                </div>
-            `;
-
-            container.appendChild(article);
-        });
-
-    } catch (error) {
-        console.error('Error cargando noticias:', error);
-        container.innerHTML = `
-            <div class="error-msg">
-                <h3>No se pudieron cargar las noticias</h3>
-                <p>Por favor, verifica que el archivo <strong>data.json</strong> existe en la misma carpeta.</p>
-                <small>Detalle técnico: ${error.message}</small>
-            </div>
-        `;
-    }
-}
-
-// Inicializar fecha actual en el encabezado
 document.addEventListener('DOMContentLoaded', () => {
-    // Poner fecha de hoy
-    const dateElement = document.getElementById('current-date');
-    if (dateElement) {
-        dateElement.textContent = new Date().toLocaleDateString('es-ES', { 
-            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
-        });
+    const container = document.getElementById('news-container');
+    const dateDisplay = document.getElementById('current-date');
+    
+    // Poner fecha actual
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    if(dateDisplay) {
+        dateDisplay.textContent = new Date().toLocaleDateString('es-ES', options);
     }
 
-    // Cargar noticias
-    loadNews();
+    // Cargar datos
+    fetch('./data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Ordenar por fecha (más reciente primero)
+            data.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+            
+            container.innerHTML = ''; 
+
+            data.forEach(noticia => {
+                const fechaNoticia = new Date(noticia.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+                
+                // --- REPRODUCTOR DE AUDIO ---
+                let audioPlayer = '';
+                if (noticia.audio) {
+                    audioPlayer = `
+                        <div style="margin: 15px 0; background: #f1f8f3; padding: 10px; border-radius: 8px; border: 1px solid #78be20;">
+                            <p style="font-size: 0.8rem; color: #333; margin-bottom: 5px; font-weight: bold;">🎧 Escuchar resumen (NotebookLM):</p>
+                            <audio controls style="width: 100%; height: 35px;">
+                                <source src="${noticia.audio}" type="audio/mpeg">
+                                Tu navegador no soporta el audio.
+                            </audio>
+                        </div>
+                    `;
+                }
+                // -----------------------------
+
+                const card = document.createElement('article');
+                card.className = 'news-card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <span class="category-tag ${noticia.categoria ? noticia.categoria.toLowerCase().replace(' ', '-') : 'general'}">${noticia.categoria}</span>
+                        <span class="date">${fechaNoticia}</span>
+                    </div>
+                    <h3>${noticia.titulo}</h3>
+                    <p>${noticia.resumen}</p>
+                    
+                    ${audioPlayer} 
+
+                    <a href="${noticia.enlace_fuente}" target="_blank" class="read-more">Leer informe completo &rarr;</a>
+                `;
+                container.appendChild(card);
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            container.innerHTML = '<p>Error al cargar las noticias.</p>';
+        });
 });
