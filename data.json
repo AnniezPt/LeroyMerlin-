@@ -18,5 +18,15 @@
     "imagen": "images/Imagen_segunda_noticia.png",
     "audio": "audios/Bol_launches_visual.m4a",
     "enlace_fuente": "https://www.retaildetail.eu/news/general/bol-launches-visual-search-function/"
+  },
+  {
+    "id": 3,
+    "fecha": "2026-01-27",
+    "categoria": "MarTech / Herramientas IA",
+    "titulo": "Google evoluciona hacia la publicidad \"Keywordless\" con AI Max",
+    "resumen": "Google ha presentado la evolución de sus herramientas publicitarias hacia \"AI Max\", un entorno donde la IA generativa asume la creación de activos creativos (títulos, descripciones) y la toma de decisiones de puja en tiempo real, relegando las palabras clave a un segundo plano. Esto obliga a los marketers a centrarse en la calidad de los datos de conversión y la exclusión estratégica de URLs.",
+    "imagen": "images/Imagen_tercera_noticia.png",
+    "audio": "audios/Google_AI_Max.m4a",
+    "enlace_fuente": "https://searchengineland.com/google-ai-max-checklist-467929"
   }
 ]
