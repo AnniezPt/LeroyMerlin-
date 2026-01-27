@@ -28,5 +28,16 @@
     "imagen": "https://via.placeholder.com/800x600.png?text=Sector+Bricolaje",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
     "enlace_fuente": "https://www.google.com"
+  },
+  {
+    "id": 4,
+    "fecha": "2026-01-22",
+    "categoria": "Quick Commerce",
+    "titulo": "Brico Depôt rompe la última milla: entregas de bricolaje en 30 minutos con Just Eat.",
+    "resumen": "Kingfisher (matriz de Brico Depôt) ha lanzado una alianza estratégica con Just Eat en España. El servicio piloto, activo en cinco ciudades clave (Madrid, A Coruña, Sevilla, Jerez y Pamplona), permite la entrega ultrarrápida de productos de urgencia y mantenimiento. Esto marca la entrada definitiva del sector DIY en la compra de conveniencia inmediata, atacando directamente el tráfico de reposición que suele acudir a la tienda física.",
+    "imagen": "https://via.placeholder.com/800x600.png?text=Quick+Commerce",
+    "audio": "audios/1.La_Alianza_del_Quick_Commerce_en_Bricolaje.m4a",
+    "enlace_fuente": "https://www.adfb.org/2026/01/22/brico-depot-hara-entregas-a-domicilio-en-cinco-ciudades-de-espana-a-traves-de-just-eat/"
   }
+
 ]
