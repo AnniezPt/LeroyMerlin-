@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boletín de Inteligencia - Leroy Merlin Focus</title>
-    <!-- Vinculación estricta al archivo CSS externo -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Favicon opcional -->
-    <link rel="icon" href="data:,">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boletín Noticias - Leroy Merlin</title>
+    <!-- Enlazamos el CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
     <header>
         <div class="header-content">
             <div class="brand">
-                <h1>LEROY MERLIN <span>INTEL</span></h1>
+                <h1><span class="section-title-marker"></span>Boletín Noticias</h1>
+                <p class="brand-subtitle">Leroy Merlin</p>
             </div>
-            <div class="date-display" id="current-date"></div>
+            <div class="filter-controls">
+                <button id="filter-category" class="filter-btn">Categorías</button>
+                <button id="filter-date" class="filter-btn">Fechas</button>
+            </div>
         </div>
     </header>
 
     <main>
-        <h2 class="section-title">Boletín de Mercado</h2>
-
-        <!-- Contenedor vacío donde script.js inyectará las tarjetas -->
+        <!-- Contenedor donde se insertarán las tarjetas de noticias -->
         <div id="news-container">
-            <div class="loading">Cargando datos...</div>
+            <div class="loading">Cargando datos…</div>
         </div>
     </main>
 
     <footer>
-        <p>© 2024 Departamento de Marketing & Estrategia. Uso interno exclusivo.</p>
+        <p>© 2024 Departamento de Marketing &amp; Estrategia. Uso interno exclusivo.</p>
     </footer>
 
-    <!-- Vinculación estricta al archivo JS externo -->
+    <!-- Enlazamos el JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
