@@ -223,6 +223,83 @@ footer {
   border-top: 1px solid #ddd;
 }
 
+/* Estado activo para botones de filtro */
+.filter-btn.active {
+  background: var(--lm-green);
+  color: #fff;
+}
+
+/* Contenedores desplegables para filtros */
+.filter-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid #ddd;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  min-width: 220px;
+  z-index: 1000;
+  display: none;
+}
+
+/* Mostrar menú cuando tenga la clase open */
+.filter-menu.open {
+  display: block;
+}
+
+/* Ajustes de campos del selector de fechas */
+.date-picker-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.filter-apply-btn {
+  background: var(--lm-green);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+.filter-apply-btn:hover {
+  background: var(--lm-dark-green);
+}
+
+/* Estilos para búsqueda y lista de categorías */
+#category-filter-menu input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+#category-options {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#category-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#category-options input[type="checkbox"] {
+  cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .header-content {
