@@ -8,5 +8,15 @@
     "imagen": "images/Imagen_primera_noticia.png",
     "audio": "audios/Retail_risky_AI.m4a",
     "enlace_fuente": "https://www.retaildive.com/news/retails-ai-bet-risks-data-market-share/810202/"
+  },
+  {
+    "id": 2,
+    "fecha": "2026-01-26",
+    "categoria": "E-Commerce Europa / Computer Vision",
+    "titulo": "Bol.com lanza \"Spot & Shop\": La IA Visual redefine el descubrimiento de productos",
+    "resumen": "El gigante europeo Bol.com ha estrenado una función de búsqueda visual impulsada por IA que permite a los usuarios encontrar productos subiendo fotos de redes sociales o del mundo real. La herramienta utiliza algoritmos de visión por computadora para identificar múltiples objetos en una escena y se integra con la tecnología de Inteligencia Visual de Apple para una experiencia sin fricción.",
+    "imagen": "images/Imagen_segunda_noticia.png",
+    "audio": "audios/Bol_launches_visual.m4a",
+    "enlace_fuente": "https://www.retaildetail.eu/news/general/bol-launches-visual-search-function/"
   }
 ]
