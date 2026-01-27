@@ -15,8 +15,25 @@
                 <p class="brand-subtitle">Leroy Merlin</p>
             </div>
             <div class="filter-controls">
+                <!-- Botón para abrir menú de categorías -->
                 <button id="filter-category" class="filter-btn">Categorías</button>
+                <!-- Menú desplegable de categorías generado dinámicamente -->
+                <div id="category-filter-menu" class="filter-menu">
+                    <input id="category-search" type="text" placeholder="Buscar categorías…" />
+                    <div id="category-options"></div>
+                </div>
+                <!-- Botón para abrir menú de fechas -->
                 <button id="filter-date" class="filter-btn">Fechas</button>
+                <!-- Menú desplegable de selección de fechas -->
+                <div id="date-filter-menu" class="filter-menu">
+                    <div class="date-picker-fields">
+                        <label for="start-date">Desde:</label>
+                        <input id="start-date" type="date" />
+                        <label for="end-date">Hasta:</label>
+                        <input id="end-date" type="date" />
+                    </div>
+                    <button id="apply-date-filter" class="filter-apply-btn">Aplicar</button>
+                </div>
             </div>
         </div>
     </header>
